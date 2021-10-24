@@ -1,6 +1,6 @@
 'use strict';
 
-function draw_logic(){
+function repo_drawlogic(){
     canvas_setproperties({
       'properties': {
         'fillStyle': canvas_gradient({
@@ -65,7 +65,7 @@ function draw_logic(){
     });
 }
 
-function logic(){
+function repo_logic(){
     xposition += xdirection * core_storage_data['speed'];
 
     if(xposition <= 0
