@@ -89,12 +89,12 @@ function repo_init(){
         'speed': 10,
         'width': 100,
       },
-      'storage-menu': '<table><tr><td><input id="color-cuboid" type=color><td>Color cuboid'
+      'storage-menu': '<table><tr><td><input id="color-cuboid" type=color><td>Color Cuboid'
         + '<tr><td><input id="color-left" type=color><td>Color Left'
         + '<tr><td><input id="color-right" type=color><td>Color Right'
-        + '<tr><td><input id=height><td>Height'
-        + '<tr><td><input id=speed><td>Speed'
-        + '<tr><td><input id=width><td>Width</table>',
+        + '<tr><td><input id=height min=1 type=number><td>Height'
+        + '<tr><td><input id=speed min=1 type=number><td>Speed'
+        + '<tr><td><input id=width min=1 type=number><td>Width</table>',
       'title': 'GradientIllusion.htm',
     });
     canvas_init();
