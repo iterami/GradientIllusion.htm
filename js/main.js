@@ -68,9 +68,11 @@ function repo_drawlogic(){
 function repo_logic(){
     xposition += xdirection * core_storage_data['speed'];
 
-    if(xposition <= 0
-      || xposition >= canvas_properties['width'] - core_storage_data['width']){
-        xdirection *= -1;
+    if(xposition <= 0){
+        xdirection = 1;
+
+    }else if(xposition >= canvas_properties['width'] - core_storage_data['width']){
+        xdirection = -1;
     }
 }
 
