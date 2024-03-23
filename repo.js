@@ -2,20 +2,18 @@
 
 function repo_drawlogic(){
     canvas_setproperties({
-      'properties': {
-        'fillStyle': canvas_gradient({
-          'width': canvas_properties['width'],
-          'stops': [
-            {
-              'color': core_storage_data['color-left'],
-            },
-            {
-              'color': core_storage_data['color-right'],
-              'offset': 1,
-            },
-          ],
-        }),
-      },
+      'fillStyle': canvas_gradient({
+        'width': canvas_properties['width'],
+        'stops': [
+          {
+            'color': core_storage_data['color-left'],
+          },
+          {
+            'color': core_storage_data['color-right'],
+            'offset': 1,
+          },
+        ],
+      }),
     });
     canvas_draw_path({
       'vertices': [
@@ -36,9 +34,7 @@ function repo_drawlogic(){
     });
 
     canvas_setproperties({
-      'properties': {
-        'fillStyle': core_storage_data['color-cuboid'],
-      },
+      'fillStyle': core_storage_data['color-cuboid'],
     });
     const half_cuboid = core_storage_data['height'] / 2;
     const half_height = canvas_properties['height'] / 2;
