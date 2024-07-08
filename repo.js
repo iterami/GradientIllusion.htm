@@ -1,62 +1,72 @@
 'use strict';
 
 function repo_drawlogic(){
-    canvas_setproperties({
-      'fillStyle': canvas_gradient({
-        'width': canvas_properties['width'],
-        'stops': [
-          {
-            'color': core_storage_data['color-left'],
-          },
-          {
-            'color': core_storage_data['color-right'],
-            'offset': 1,
-          },
-        ],
-      }),
-    });
     canvas_draw_path({
+      'properties': {
+        'fillStyle': canvas_gradient({
+          'width': canvas_properties['width'],
+          'stops': [
+            {
+              'color': core_storage_data['color-left'],
+            },
+            {
+              'color': core_storage_data['color-right'],
+              'offset': 1,
+            },
+          ],
+        }),
+      },
       'vertices': [
-        {
-          'type': 'moveTo',
-        },
-        {
-          'x': canvas_properties['width'],
-        },
-        {
-          'x': canvas_properties['width'],
-          'y': canvas_properties['height'],
-        },
-        {
-          'y': canvas_properties['height'],
-        },
+        [
+          'moveTo',
+          0,
+          0,
+        ],
+        [
+          'lineTo',
+          canvas_properties['width'],
+          0,
+        ],
+        [
+          'lineTo',
+          canvas_properties['width'],
+          canvas_properties['height'],
+        ],
+        [
+          'lineTo',
+          0,
+          canvas_properties['height'],
+        ],
       ],
     });
 
-    canvas_setproperties({
-      'fillStyle': core_storage_data['color-cuboid'],
-    });
     const half_cuboid = core_storage_data['height'] / 2;
     const half_height = canvas_properties['height'] / 2;
     canvas_draw_path({
+      'properties': {
+        'fillStyle': core_storage_data['color-cuboid'],
+      },
       'vertices': [
-        {
-          'type': 'moveTo',
-          'x': xposition,
-          'y': half_height - half_cuboid,
-        },
-        {
-          'x': xposition + core_storage_data['width'],
-          'y': half_height - half_cuboid,
-        },
-        {
-          'x': xposition + core_storage_data['width'],
-          'y': half_height + half_cuboid,
-        },
-        {
-          'x': xposition,
-          'y': half_height + half_cuboid,
-        },
+        [
+          'moveTo',
+          xposition,
+          half_height - half_cuboid,
+        ],
+        [
+          'lineTo',
+          xposition + core_storage_data['width'],
+          half_height - half_cuboid,
+        ],
+        [
+          'lineTo',
+          xposition + core_storage_data['width'],
+          half_height + half_cuboid,
+        ],
+        [
+          'lineTo',
+          xposition,
+          half_height + half_cuboid,
+        ],
       ],
     });
 }
