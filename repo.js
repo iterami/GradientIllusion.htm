@@ -40,32 +40,32 @@ function repo_drawlogic(){
       ],
     });
 
-    const half_cuboid = core_storage_data['height'] / 2;
     const half_height = canvas_properties['height'] / 2;
+    const half_rectangle = core_storage_data['height'] / 2;
     canvas_draw_path({
       'properties': {
-        'fillStyle': core_storage_data['color-cuboid'],
+        'fillStyle': core_storage_data['color-rectangle'],
       },
       'vertices': [
         [
           'moveTo',
           xposition,
-          half_height - half_cuboid,
+          half_height - half_rectangle,
         ],
         [
           'lineTo',
           xposition + core_storage_data['width'],
-          half_height - half_cuboid,
+          half_height - half_rectangle,
         ],
         [
           'lineTo',
           xposition + core_storage_data['width'],
-          half_height + half_cuboid,
+          half_height + half_rectangle,
         ],
         [
           'lineTo',
           xposition,
-          half_height + half_cuboid,
+          half_height + half_rectangle,
         ],
       ],
     });
@@ -90,14 +90,14 @@ function repo_init(){
       },
       'reset': canvas_setmode,
       'storage': {
-        'color-cuboid': '#226622',
+        'color-rectangle': '#226622',
         'color-left': '#000000',
         'color-right': '#44cc44',
         'height': 200,
         'speed': 10,
         'width': 100,
       },
-      'storage-menu': '<table><tr><td><input id=color-cuboid type=color><td>Color Cuboid'
+      'storage-menu': '<table><tr><td><input id=color-rectangle type=color><td>Color Rectangle'
         + '<tr><td><input id=color-left type=color><td>Color Left'
         + '<tr><td><input id=color-right type=color><td>Color Right'
         + '<tr><td><input class=mini id=height min=1 step=any type=number><td>Height'
