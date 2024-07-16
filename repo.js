@@ -23,54 +23,26 @@ function repo_drawlogic(){
       },
       'vertices': [
         [
-          'moveTo',
+          'rect',
           0,
           0,
-        ],
-        [
-          'lineTo',
           canvas_properties['width'],
-          0,
-        ],
-        [
-          'lineTo',
-          canvas_properties['width'],
-          canvas_properties['height'],
-        ],
-        [
-          'lineTo',
-          0,
           canvas_properties['height'],
         ],
       ],
     });
 
-    const half_height = canvas_properties['height'] / 2;
-    const half_rectangle = core_storage_data['height'] / 2;
     canvas_draw_path({
       'properties': {
         'fillStyle': core_storage_data['color-rectangle'],
       },
       'vertices': [
         [
-          'moveTo',
+          'rect',
           xposition,
-          half_height - half_rectangle,
-        ],
-        [
-          'lineTo',
-          xposition + core_storage_data['width'],
-          half_height - half_rectangle,
-        ],
-        [
-          'lineTo',
-          xposition + core_storage_data['width'],
-          half_height + half_rectangle,
-        ],
-        [
-          'lineTo',
-          xposition,
-          half_height + half_rectangle,
+          canvas_properties['height'] / 2 - core_storage_data['height'] / 2,
+          core_storage_data['width'],
+          core_storage_data['height']
         ],
       ],
     });
