@@ -4,7 +4,12 @@ function repo_drawlogic(){
     canvas_draw_path({
       'properties': {
         'fillStyle': canvas_gradient({
-          'width': canvas_properties['width'],
+          'args': [
+            0,
+            0,
+            canvas_properties['width'],
+            0,
+          ],
           'stops': [
             {
               'color': core_storage_data['color-left'],
