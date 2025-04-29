@@ -65,7 +65,6 @@ function repo_init(){
         'xdirection': 1,
         'xposition': 0,
       },
-      'reset': canvas_setmode,
       'storage': {
         'color-rectangle': '#226622',
         'color-left': '#000000',
