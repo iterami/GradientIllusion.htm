@@ -3,23 +3,7 @@
 function repo_drawlogic(){
     canvas_draw_path({
       'properties': {
-        'fillStyle': canvas_gradient({
-          'args': [
-            0,
-            0,
-            canvas_properties['width'],
-            0,
-          ],
-          'stops': [
-            {
-              'color': core_storage_data['color-left'],
-            },
-            {
-              'color': core_storage_data['color-right'],
-              'offset': 1,
-            },
-          ],
-        }),
+        'fillStyle': gradient,
       },
       'vertices': [
         [
@@ -39,8 +23,8 @@ function repo_drawlogic(){
       'vertices': [
         [
           'rect',
-          xposition,
-          canvas_properties['height'] / 2 - core_storage_data['height'] / 2,
+          x,
+          y,
           core_storage_data['width'],
           core_storage_data['height']
         ],
@@ -49,25 +33,27 @@ function repo_drawlogic(){
 }
 
 function repo_logic(){
-    xposition += xdirection * core_storage_data['speed'];
+    x += direction * core_storage_data['speed'];
 
-    if(xposition <= 0){
-        xdirection = 1;
+    if(x <= 0){
+        direction = 1;
 
-    }else if(xposition >= canvas_properties['width'] - core_storage_data['width']){
-        xdirection = -1;
+    }else if(x >= canvas_properties['width'] - core_storage_data['width']){
+        direction = -1;
     }
 }
 
 function repo_init(){
     core_repo_init({
       'globals': {
-        'xdirection': 1,
-        'xposition': 0,
+        'direction': 1,
+        'gradient': 0,
+        'x': 0,
+        'y': 0,
       },
       'storage': {
-        'color-rectangle': '#226622',
         'color-left': '#000000',
+        'color-rectangle': '#226622',
         'color-right': '#44cc44',
         'height': 200,
         'speed': 10,
@@ -82,4 +68,25 @@ function repo_init(){
       'title': 'GradientIllusion.htm',
     });
     canvas_init();
+}
+
+function repo_resizelogic(){
+    gradient = canvas_gradient({
+      'args': [
+        0,
+        0,
+        canvas_properties['width'],
+        0,
+      ],
+      'stops': [
+        {
+          'color': core_storage_data['color-left'],
+        },
+        {
+          'color': core_storage_data['color-right'],
+          'offset': 1,
+        },
+      ],
+    });
+    y = canvas_properties['height'] / 2 - core_storage_data['height'] / 2;
 }
