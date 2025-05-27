@@ -32,17 +32,6 @@ function repo_drawlogic(){
     });
 }
 
-function repo_logic(){
-    x += direction * core_storage_data['speed'];
-
-    if(x <= 0){
-        direction = 1;
-
-    }else if(x >= canvas_properties['width'] - core_storage_data['width']){
-        direction = -1;
-    }
-}
-
 function repo_init(){
     core_repo_init({
       'globals': {
@@ -68,6 +57,17 @@ function repo_init(){
       'title': 'GradientIllusion.htm',
     });
     canvas_init();
+}
+
+function repo_logic(){
+    x += direction * core_storage_data['speed'];
+
+    if(x <= 0){
+        direction = 1;
+
+    }else if(x >= canvas_properties['width'] - core_storage_data['width']){
+        direction = -1;
+    }
 }
 
 function repo_resizelogic(){
