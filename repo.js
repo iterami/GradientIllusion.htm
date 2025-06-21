@@ -48,7 +48,7 @@ function repo_init(){
         'speed': 10,
         'width': 100,
       },
-      'storage-menu': '<table><tr><td><input id=color_rectangle type=color><td>Color Rectangle'
+      'storage_menu': '<table><tr><td><input id=color_rectangle type=color><td>Color Rectangle'
         + '<tr><td><input id=color_left type=color><td>Color Left'
         + '<tr><td><input id=color_right type=color><td>Color Right'
         + '<tr><td><input class=mini id=height min=1 step=any type=number><td>Height'
