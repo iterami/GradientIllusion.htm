@@ -84,8 +84,7 @@ function repo_init(){
         + '<tr><td class=right colspan=2><select id=orientation><option value=0>X+<option value=1>X-<option value=2>Y+<option value=3>Y-</select> Gradient Orientation'
         + '<tr><td class=right colspan=2><select id=direction><option value=0>X<option value=1>Y</select> Movement Direction'
         + '<tr><td><input id=speed min=1 step=any type=number><td>Speed'
-        + '<tr><td><input id=height min=1 step=any type=number><td>Height'
-        + '<tr><td><input id=width min=1 step=any type=number><td>Width</table>',
+        + '<tr><td><input class=mini id=width min=1 step=any type=number>x <input class=mini id=height min=1 step=any type=number>y<td>Size</table>',
       'title': 'GradientIllusion.htm',
     });
     canvas_init();
